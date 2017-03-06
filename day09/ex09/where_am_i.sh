@@ -1,0 +1,7 @@
+var=$(ifconfig -a | grep inet | grep -v inet6 | cut -d " " -f2)
+if test -z "$var"
+then
+	echo "Je suis perdu!\n"
+else
+	echo $var | tr ' ' '\n'
+fi
